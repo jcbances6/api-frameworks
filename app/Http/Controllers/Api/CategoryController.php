@@ -82,7 +82,7 @@ class CategoryController extends Controller
         try{
             $category = Category::findOrFail($id);
             $category->delete();
-            return response()->json(['message' => 'Categoría eliminada'], 204);
+            return response()->json(['message' => 'Categoría eliminada'], 200);
         }catch(\Exception $e){
             return response()->json(['error' => $e->getMessage()], 500);
         }
